@@ -19,7 +19,7 @@ def create_chess_players():
     title varchar(3)
     """
     fake = Faker('en_US')
-    with open('data/chess_players.csv', 'w') as f:
+    with open('../data/chess_players.csv', 'w') as f:
         for _ in range(N):
             name = fake.name().split()
             age = randint(20, 60)
@@ -42,7 +42,7 @@ def create_tournaments():
     place_3 integer
     """
     fake = Faker()
-    with open('data/tournaments.csv', 'w') as f:
+    with open('../data/tournaments.csv', 'w') as f:
         for _ in range(T):
             name = f'{fake.word().upper()} - {fake.word().upper()}'
             location = fake.city()
@@ -63,7 +63,7 @@ def create_games():
     format text,
     year integer
     """
-    with open('data/games.csv', 'w') as f:
+    with open('../data/games.csv', 'w') as f:
         for _ in range(G):
             id_1 = randint(1, N)
             id_2 = randint(1, N)
@@ -84,8 +84,8 @@ def create_participants():
     defeats integer,
     draws integer
     """
-    with open('data/participants.csv', 'w') as f:
-        for _ in range(P):
+    with open('../data/participants.csv', 'w') as f:
+        for i in range(P):
             id_p = randint(1, N)
             id_t = randint(1, T)
             place = randint(1, 20)
